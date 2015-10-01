@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>{$page_title}</title>
+		<meta name="description" content="{$seo_description}">
+		<meta name="keyword" content="{$seo_keywords}">
+		<link rel="stylesheet" href="templates/v2/css/reset.css" />
+		<link rel="stylesheet" href="templates/v2/css/960.css" />
+		<link rel="stylesheet" href="templates/v2/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="templates/v2/css/v2.css" />
+		<script type="text/javascript" src="templates/v2/js/jquery.js"></script>
+		<script type="text/javascript" src="templates/v2/js/totop.js"></script>
+		<script type="text/javascript" src="templates/v2/js/calender.js"></script>
+		<script type="text/javascript" src="templates/v2/js/ajax_scroll.js"></script>
+		<script type="text/javascript" src="templates/v2/js/functions.js"></script>
+	</head>
+	<body onLoad='navigate("{$month}","{$year}")'>
+	<div class="container_12">
+	<div class="grid_12 social_tools right_align">
+	{if !empty($facebook)}<a href="{$facebook}" target="_blank"><span><img src="templates/v2/images/facebook.png" /></span></a>{/if}
+	{if !empty($twitter)}<a href="{$twitter}" target="_blank"><span><img src="templates/v2/images/twitter.png" /></span></a>{/if}
+	{if !empty($google_plus)}<a href="{$google_plus}" target="_blank"><span><img src="templates/v2/images/google_plus.png" /></span></a>{/if}
+	{if $display_rss eq 1}<a href="{if $friendly_urls eq 1}rss.xml{else}rss.php{/if}"><span><img src="templates/v2/images/rss.png" /></span></a>{/if}
+	</div>
+	<div class="grid_2 logo">
+    <img src="templates/v2/images/logo.png" />
+    </div>
+	<div class="grid_10 topbanner">
+	{include file="ad_728_widget.html"}
+	</div>
+  <div class="grid_12">
+  {include file=links_widget.html}
+  </div>
+	

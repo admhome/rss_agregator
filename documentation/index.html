@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>RSS Aggregator Script Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;RSS Aggregator V1.0&rdquo; Documentation by &ldquo;WebBag.us&rdquo; v1.2</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;RSS Aggregator V1.0&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 4/9/2013<br>
+					By: Chanifuddin Fanani<br>
+					Email: <a href="mailto:chanifuddin@live.com">chanifuddin@live.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my script. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/webbagus">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#features">Features</a></li>
+			<li><a href="#install">Install</a></li>
+			<li><a href="#usage">Usage</a></li>
+			<li><a href="#cronjob">Setting Cronjob </a></li>
+			<li><a href="#requirements">Requirements & Credits</a></li>
+		</ol>
+		
+		<hr>
+		
+		
+		<h3 id="features"><strong>A) Features</strong> - <a href="#toc">top</a></h3>
+		<p>RSS Aggregator V1.0 comes with features such as :</p>
+		<p>
+		1) friendly urls control (on - off).<br />
+		2) three pagination styles (simple php - load more - infinite scroll).<br />
+		3) archive calendar (browse posts by date) .<br />
+		4) RSS for the new posts and for each category.<br />
+		5) SEO-Compatible Sitemap.<br />
+		6) 960 grid system templates.<br />
+		7) moderated social links (facebook - twitter - facebook).<br />
+		8) option to add google analytics code from setting page<br />
+		9) new page (feed page)<br />
+		</p>
+		<hr>
+		
+		<h3 id="install"><strong>B) Install</strong> - <a href="#toc">top</a></h3>
+		<p>Install RSS Aggregator Script</p>
+		<p>
+		1) Unpack the archive.<br />
+		2) Upload files from <b>"rss_aggregator"</b> folder to your site.<br />
+		3) Change the <b>database settings</b> in <b>config.php</b> file <i>(located in include folder)</i> to yours.<br />
+		<img src="assets/images/config.jpg" alt="config.php file" /><br />
+		4) Excute The <b>"include/install.php"</b> file. (contains two options upgrade or fresh install)<br />
+		5) Make the folder (cache) writable, with the permissions of <b>0777</b> or <b>0755</b> as your server setting.<br />
+		6) Then go to <i>admin.php</i> page in <i>http://www.YOUR-DOMAIN.com/RSS_AGGREGATOR_SCRIPT_FOLDER/admin/login.php</i><br /> login with<br ><b>username : admin</b><br /><b>password : demo</b><br />you can change your password later from the control panel.
+		</p>
+		<hr>
+
+		<h3 id="usage"><strong>C) Usage</strong> - <a href="#toc">top</a></h3>
+		<b>Setting Page</b> : contains the <i>SEO setting</i>, <i>Display Setting</i>, <i>Ads Setting</i>, <i>Ads Setting</i> and <i>google analytics Setting</i><br /><br />
+		1) SEO Setting : is used for the search bots. fill it with your details. dont forget to separate the Keywords with commas <b>,</b><br />		
+ 		2) Display Setting : is used to define the site template and the number of items in home page, top hits page and category page, also in v2 it contains the friendly url option and the pagination styles and the capability to display rss and control the number of rss items .<br />		
+		3) Social Setting : You Can Add Your social networks profiles easily.<br /><br />
+		4) Ads Setting : There are two ad spaces in template with standard dimensions of 728-90 px and 300-250 px. (you can insert a HTML code or Adsense code).<br /><br />
+		5) Google Analytics Tracking Code.<br /><br />
+		<img src="assets/images/setting.jpg" alt="setting page" /><br /><br />
+		<hr>
+		<b>Index Page</b> : contains simple statistics about the feed sources. <br /><br />
+		<img src="assets/images/index.jpg" alt="control panel index page" /><br /><br />
+		<hr>
+		<b>Categories Page</b> : control the categories Add, Edit and Delete. <br /><br />
+		<img src="assets/images/categories.jpg" alt="categories control page" /><br /><br />
+		<hr>
+		<b>Add Feed Page</b> : <br /><br />
+		1) Source Title : this field value is the title of the website or the part of website that the feed is derived.<br />
+		2) Feed Source Url : the absolute url to the feed link. <i>( for feedburner.com feeds, the script add <b>?format=xml</b> to the end of feed url automatically. )</i><br />
+		3) Source Category : you can't add feed source before adding at least one category.</i><br />
+		4) Items Per Grab : the number of the feed items that will be grabbed every time.</i><br /><br />
+		<img src="assets/images/add_feed.jpg" alt="add feed page" /><br /><br />
+		<hr>
+		<b>Feeds Page</b> : <br /><br />
+		To grab a Feed Items manually, just click on the ajax link <b>(Grab Feed Items)</b> behind every Feed Source Title. <br /><br />
+		<img src="assets/images/feeds.jpg" alt="feeds control page" /><br /><br />
+		<hr>
+		<b>Feed Items Page</b> : <br /><br />
+		You can (pin - unpin) items; make the item stick to the top list of items in category page. <br />
+		You can (delete - restore) items; the script doesn't delete the items from database. just hides it. <i>(you can get the deleted items by clicking on <b>Deleted Items</b> link)</i><br /><br />
+		<img src="assets/images/items.jpg" alt="items control page" /><br /><br />
+		<hr>
+		
+		<h3 id="cronjob"><strong>D) Setting Cronjob</strong> - <a href="#toc">top</a></h3>
+		<p>to prepare a cronjob command to grab the feeds sources automatically :</p>
+		<p>
+		enter the (Add New Cron Job) from your site CPanel<br />
+		<img src="assets/images/cron1.jpg" alt="add cron job" /><br /><br />
+		choose the common setting according to your server specifications. (we recommend to choose twice a day).<br />
+		in the command input put<br />
+		<pre>php -q /home/YOUR-ACCOUNT/PATH-TO-CRON-FILE/cron.php</pre><br />
+		substitute YOUR-ACCOUNT by yours; <i>most times this value is like the domain name e.g: codecanyon, webbagus without www or .com etc.</i> <br />
+		substitute PATH-TO-CRON-FILE by the path that you have installed the script in relating to your web root.<br />
+		e.g : public_html/rss_aggregator_script/<br />
+		the command will be :<br />
+		<pre>php -q /home/webbagus/public_html/rss_aggregator/cron.php</pre><br /><br />
+		you can change the cron.php filename to the name you want in order to keep it secure.<br />
+		</p>
+		<hr>
+		
+		<h3 id="requirements"><strong>E) Requirements & Credits</strong> - <a href="#toc">top</a></h3>
+		<p>RSS Aggregator Script requires :</p>
+		<p>
+		1) PHP 5.2 or more.<br />
+		2) MySQL database<br />
+		3) file_get_contents() function.<br />
+		</p>
+		<br />
+		<p>RSS Aggregator Script uses :</p>
+		<p>
+		1) <a href="http://smarty.php.net/" target="_NEW">Smarty Templates</a>.<br />
+		2) <a href="http://simplepie.org/" target="_NEW">SimplePie</a> php lib.<br />
+		3) <a href="http://jquery.org/" target="_NEW">JQuery lib</a>.<br />
+		</p>
+		<hr>
+		
+		
+		<p>Once again, thank you so much for purchasing this script. As I said at the beginning, I'd be glad to help you if you have any questions relating to this script. No guarantees, but I'll do my best to assist. </p> 
+		<p class="append-bottom alt large"><strong>Chanifuddin Fanani</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

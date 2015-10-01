@@ -1,0 +1,12 @@
+RewriteEngine on
+
+RewriteRule ^feed-sources$ sources.php
+RewriteRule ^top-hits-items$ top_items.php
+RewriteRule ^page-(.*)$ index.php?page=$1
+RewriteRule ^item-(.*)-(.*)$ item.php?id=$1&title=$2
+RewriteRule ^category-(.*)-(.*)-(.*)$ category.php?id=$1&page=$2&title=$3
+RewriteRule ^date-(.*)_page(.*)$ items_by_date.php?date=$1&page=$2
+RewriteRule ^feed-(.*)-(.*)-(.*)$ feed.php?id=$1&page=$2&title=$3
+RewriteRule ^sitemap.xml$ sitemap.php
+RewriteRule ^rss.xml$ rss.php
+RewriteRule ^rss-category-(.*).xml$ rss.php?category=$1

@@ -1,0 +1,31 @@
+{include file=header.html}
+
+  <div class="grid_4">
+    {include file=categories_widget.html}
+	{include file=ad_300_widget.html}
+	{include file=calender_widget.html}
+  </div>
+  <div class="grid_8">
+  <div id="feeditems">
+  <h3><i class="icon-rss"></i> Feed Sources</h3>
+			<div class="widget_body">
+			<!-- Feed Sources Loop -->
+				{section name=x loop=$sources}
+					<div class="feeditem">
+					{if !empty($sources[x].feed_logo)}
+					<img src="upload/feeds_logos/{$sources[x].feed_logo}" class="first_image" />
+					{/if}	
+					<!-- Sources Url -->
+					<a class="item_url" href="{if $friendly_urls eq 1}feed-{$sources[x].feed_id}-1-{$sources[x].feed_title|slug}{else}feed.php?id={$sources[x].feed_id}{/if}">{$sources[x].feed_title}</a>
+					<div class="item_details">
+					<!-- Source category Link -->
+			        <span><i class="icon-folder-open"></i> <a href="{if $friendly_urls eq 1}category-{$sources[x].category_id}-1-{$sources[x].category_title|slug}{else}category.php?id={$sources[x].category_id}{/if}">{$sources[x].category_title}</a></span>
+					<!-- Source Items Number -->
+					<span><b>items</b> {$sources[x].feed_id|items_number}</span>
+					</div>
+					</div>
+				{/section}
+			</div>
+	</div>
+	</div>
+{include file=footer.html}

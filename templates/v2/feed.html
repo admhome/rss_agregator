@@ -1,0 +1,53 @@
+{include file=header.html}
+
+  <div class="grid_4">
+    {include file=categories_widget.html}
+	{include file=ad_300_widget.html}
+	{include file=calender_widget.html}
+  </div>
+  <div class="grid_8">
+  <div id="feeditems">
+  <h3><i class="icon-rss"></i> {$feed_title}</h3>
+       <div id="feed_items">
+	{if $pagination_style eq 1}
+	{section name=x loop=$items}
+	<div class="feeditem">
+		<!-- Item Image (extracted from the item details) -->
+		{if $items[x].item_details|html_decode|first_image:$items[x].item_feed_id}
+		<img src="{$items[x].item_details|html_decode|first_image:$items[x].item_feed_id}" />
+		{/if}
+		<!-- Item Details Link -->
+		<a class="item_url" {if $direct_links eq 1}href="redirect.php?id={$items[x].item_id}" target="_BLANK"{else}href="{if $friendly_urls eq 1}item-{$items[x].item_id}-{$items[x].item_title|slug}{else}item.php?id={$items[x].item_id}{/if}"{/if}>{$items[x].item_title|html_decode}</a>
+		<div class="item_details">
+			<!-- Item Published Date -->
+			<span><i class="icon-calendar"></i> {$items[x].item_unix_datetime|get_since}</span>
+			<!-- Item category Link -->
+			<span><i class="icon-folder-open"></i> <a href="{if $friendly_urls eq 1}category-{$items[x].category_id}-1-{$items[x].category_title|slug}{else}category.php?id={$items[x].category_id}{/if}">{$items[x].category_title}</a></span>
+			<!-- Item Hits Counter -->
+			<span><i class="icon-eye-open"></i> {$items[x].item_hits}</span>
+		</div>
+	</div>
+	{/section}
+	{/if}
+    </div>
+  </div>
+    {if $pagination_style eq 1}
+	{$pagi}
+	{else}
+	  {literal}
+	  <script>
+	$(document).ready(function() {
+		$('#feed_items').scrollPagination({
+			nop     	: {/literal}{$category_items_number}{literal},
+			offset  	: 0,
+			error   	: 'No More Results', 
+			ajax_file	: 'ajax_feed_items.php?id={/literal}{$feed_id}{literal}',
+			delay   	: 500, 
+			scroll  	: {/literal}{if $pagination_style eq 2}false{else}true{/if}{literal}
+		});
+	});
+	</script>
+	{/literal}
+	{/if}
+  </div>
+{include file=footer.html}

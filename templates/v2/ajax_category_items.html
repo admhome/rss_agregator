@@ -1,0 +1,19 @@
+{section name=x loop=$items}
+	<div class="feeditem">
+		<!-- Item Image (extracted from the item details) -->
+		{if $items[x].item_details|html_decode|first_image:$items[x].item_feed_id}
+		<img src="{$items[x].item_details|html_decode|first_image:$items[x].item_feed_id}" />
+		{/if}
+		<!-- Item Details Link -->
+		<a class="item_url" {if $direct_links eq 1}href="redirect.php?id={$items[x].item_id}" target="_BLANK"{else}href="{if $friendly_urls eq 1}item-{$items[x].item_id}-{$items[x].item_title|slug}{else}item.php?id={$items[x].item_id}{/if}"{/if}>{$items[x].item_title|html_decode}</a>
+		<div class="item_details">
+			<!-- Item Published Date -->
+			<span><i class="icon-calendar"></i> {$items[x].item_unix_datetime|get_since}</span>
+			<!-- Item category Link -->
+			<span><i class="icon-rss"></i> <a href="{if $friendly_urls eq 1}feed-{$items[x].item_feed_id}-1-{$items[x].item_feed_id|source_name|slug}{else}feed.php?id={$items[x].item_feed_id}{/if}">{$items[x].item_feed_id|source_name}</a></span>
+			<!-- Item Hits Counter -->
+			<span><i class="icon-eye-open"></i> {$items[x].item_hits}</span>
+		</div>
+	</div>
+{/section}
+ 

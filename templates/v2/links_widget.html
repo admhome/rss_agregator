@@ -1,0 +1,8 @@
+<!-- Menu -->
+<ul id="nav">
+	<li><a href="{if $friendly_urls eq 1}./{else}index.php{/if}"><i class="icon-home"></i> Home Page</a></li>
+	<li><a href="{if $friendly_urls eq 1}top-hits-items{else}top_items.php{/if}"><i class="icon-bar-chart"></i> Top Hits Items</a></li>
+	<li><a href="{if $friendly_urls eq 1}feed-sources{else}sources.php{/if}"><i class="icon-rss"></i> Feed Sources</a></li>
+	<li style="float:right;">{include file="search_form.html"}</li>
+</ul>
+		

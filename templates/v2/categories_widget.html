@@ -1,0 +1,11 @@
+<!-- Categories Widget -->
+	<div class="categories">
+		<h3><i class="icon-folder-open"></i> Categories</h3>
+			<ul>
+			<!-- Categories Loop -->
+			{section name=x loop=$categories}
+				<li><a href="{if $friendly_urls eq 1}category-{$categories[x].category_id}-1-{$categories[x].category_title|slug}{else}category.php?id={$categories[x].category_id}{/if}">{$categories[x].category_title}</a></li>
+			{/section}
+			</ul>
+	</div>
+	
